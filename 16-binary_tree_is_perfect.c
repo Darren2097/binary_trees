@@ -9,7 +9,7 @@
 
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
-	if (tree != NULL && tree->parent != NULL)
+	if (tree->parent != NULL)
 		return (binary_tree_depth(tree->parent) + 1);
 	else
 		return (0);
@@ -27,7 +27,7 @@ size_t binary_tree_depth(const binary_tree_t *tree)
 int is_perfect(const binary_tree_t *tree, size_t depth, int level)
 {
 	if (tree == NULL)
-		return (1);
+		return (0);
 
 	if (tree->left == NULL && tree->right == NULL)
 		return (depth = level + 1);
